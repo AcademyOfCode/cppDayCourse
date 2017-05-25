@@ -2,7 +2,9 @@
 #pragma once
 const int n = 10;
 
-#include <String>
+#include <string>
+
+using namespace std;
 
 class Student {
 public:
@@ -12,12 +14,11 @@ public:
   int numOfGrades;
 
   Student();
-  Student(string _name, int *_grades, int _numOfGrades);
+  Student(string _name, int _grades[], int _numOfGrades);
   void addGrade(int grade);
   void changeGrade(int grade, int pos);
   void removeGrade(int pos);
   int getNumOfGrades();
-  int getAverageMark();
   int averageMark();
-
-}
+  void printOutGrades();
+};

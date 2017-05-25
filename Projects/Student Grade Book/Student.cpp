@@ -1,5 +1,6 @@
-#include <Student.hpp>
+#include "Student.hpp"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -9,8 +10,11 @@ Student::Student() {
 
 Student::Student(string _name, int *_grades, int _numOfGrades) {
   name = _name;
-  grades = _grades;
   numOfGrades = _numOfGrades;
+  cout << endl;
+  for (int i = 0; i < numOfGrades; i++) {
+    grades[i] = _grades[i];
+  }
 }
 
 void Student::addGrade(int grade) {
@@ -44,10 +48,6 @@ int Student::getNumOfGrades() {
   return numOfGrades;
 }
 
-int Student::getAverageMark() {
-  return averageMark;
-}
-
 int Student::averageMark() {
   int totalMarks = 0;
   for (int i = 0; i < numOfGrades; i++) {
@@ -55,4 +55,11 @@ int Student::averageMark() {
   }
   int averageMark = int(totalMarks/numOfGrades);
   return averageMark;
+}
+
+void Student::printOutGrades() {
+  for (int i = 0; i < numOfGrades; i++) {
+    cout << grades[i] << " ";
+  }
+  cout << endl;
 }

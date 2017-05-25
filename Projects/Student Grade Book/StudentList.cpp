@@ -1,4 +1,4 @@
-#include <StudentList.hpp>
+#include "StudentList.hpp"
 #include <iostream>
 #include <String>
 
@@ -11,6 +11,7 @@ StudentList::StudentList() {
 void StudentList::addStudentToStart(Student *student) {
   Node *newNode = new Node;
   newNode->student = student;
+  newNode->next = NULL;
 
   if (head == NULL) {
     head = newNode;
@@ -24,6 +25,7 @@ void StudentList::addStudentToStart(Student *student) {
 void StudentList::addStudentToEnd(Student *student) {
   Node *newNode = new Node;
   newNode->student = student;
+  newNode->next = NULL;
 
   Node *current = head;
   if (head == NULL) {
@@ -37,9 +39,14 @@ void StudentList::addStudentToEnd(Student *student) {
   return;
 }
 
-void StudentList::addStudentToPos(Student *student) {
+void StudentList::addStudentToPos(Student *student, int pos) {
+  if (pos == 0) {
+    addStudentToStart(student);
+    return;
+  }
   Node *newNode = new Node;
   newNode->student = student;
+  newNode->next = NULL;
 
   Node *current = head;
   Node *prev = NULL;
@@ -53,9 +60,12 @@ void StudentList::addStudentToPos(Student *student) {
       current = current->next;
     }
   }
+  newNode->next = current;
+  current = newNode;
+  prev->next = current;
 }
 
-void StudentList::removeNode(String name) {
+void StudentList::removeNode(string name) {
   Node *current = head;
   Node *prev = NULL;
   while (current != NULL) {
