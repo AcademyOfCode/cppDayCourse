@@ -2,10 +2,17 @@
 
 using namespace std;
 
-int main() {
+void pickNumber();
 
+void exampleFunction();
+
+int main() {
+  exampleFunction();
 }
 
+void exampleFunction() {
+  cout << "Example";
+}
 
 void pickNumber() {
   int aNumber;
@@ -13,5 +20,3 @@ void pickNumber() {
   cin >> aNumber;
   cout << "Is your number " << aNumber << "?";
 }
-
-int pickNumber
