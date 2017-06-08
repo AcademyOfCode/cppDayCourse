@@ -3,6 +3,26 @@
 
 using namespace std;
 
+// struct Example {
+//   int a;
+//   int b;
+// };
+//
+// class ExampleClass {
+//   int a;
+//   int b;
+//
+//   ExampleClass(int _a, int _b) {
+//     a = _a;
+//     b = _b;
+//   }
+//
+//   void printValues() {
+//     cout << a << " " << b << endl;
+//   }
+// };
+
+
 struct Enemy {
   int life;
 };
@@ -32,7 +52,7 @@ int main() {
   orc.life = 7;
   Player hero(5, 1);
   int damage;
-
+  srand(20);
   while(goblin.life > 0) {
     cout << "Hero attacks goblin!" << endl;
     damage = hero.attackEnemy();
@@ -54,8 +74,34 @@ int main() {
       cout << "Hero slayed the orc!" << endl;
     }
   }
-
-
-
-
 }
+
+
+
+
+// class Human {
+// public:
+//   string name;
+// private:
+//   int age;
+// }
+// Human teacher;
+// teacher.name = "Mark";
+// teacher.age = 22;
+
+// class Student {
+// public:
+//   string name;
+//   int getStudentID();
+//   void setStudentID(int _studentID);
+// private:
+//   int studentID;
+// };
+//
+// int Student::getStudentID() {
+//   return studentID;
+// }
+//
+// void Student::setStudentID(int _studentID) {
+//   studentID = _studentID;
+// }

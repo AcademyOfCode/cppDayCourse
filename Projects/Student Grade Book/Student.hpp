@@ -22,3 +22,31 @@ public:
   int averageMark();
   void printOutGrades();
 };
+
+
+
+
+
+
+
+class Student {
+public:
+  string name;
+  int getStudentID();
+  void setStudentID(int _studentID);
+private:
+  int studentID;
+};
+
+int Student::getStudentID() {
+  return studentID;
+}
+
+void setStudentID(int _studentID) {
+  studentID = _studentID;
+}
+
+Student student;
+student.name = "John":
+student.setStudentID(12345);
+cout << student.getStudentID();

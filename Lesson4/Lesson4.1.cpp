@@ -10,6 +10,7 @@ void addNodeToTail(int data);
 void addNodeToHead(int data);
 void addToPos(int data, int pos);
 void removeNode(int data);
+void removeHead();
 void printList();
 
 struct Node {
@@ -109,6 +110,17 @@ void removeNode(int data) {
       prev = current;
       current = current->next;
     }
+  }
+  cout << "This item is not in the list" << endl;
+  return;
+}
+
+void removeHead() {
+  Node *current = head;
+  while (current != NULL) {
+    head = current->next;
+    delete current;
+    return;
   }
   cout << "This item is not in the list" << endl;
   return;
